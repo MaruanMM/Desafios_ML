@@ -234,8 +234,8 @@ if aba == "4. Fraude":
         st.write("Ajuste as variáveis principais para testar o comportamento do modelo:")
         
         # Simulando entradas simplificadas (Baseadas nas colunas V1, V2... do dataset)
-        v1 = st.slider("Componente Principal V1 (Intensidade)", -30.0, 5.0, 0.0)
-        v4 = st.slider("Componente Principal V4 (Nível de Suspeita)", -5.0, 15.0, 1.0)
+        v1 = st.slider("V1 (Intensidade da Anomalia)", -30.0, 5.0, 0.0, help="Valores muito negativos costumam indicar desvio do padrão de consumo.")
+        v4 = st.slider("V4 (Nível de Risco Estático)", -5.0, 15.0, 1.0, help="Valores altos nesta componente estão fortemente correlacionados a fraudes neste modelo.")
         amount = st.number_input("Valor da Transação ($)", 0.0, 5000.0, 122.0)
         
         if st.button("Analisar Transação"):
